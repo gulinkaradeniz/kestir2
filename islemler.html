@@ -1,20 +1,42 @@
 <html>
     <head>
         <title>İşlem Seçimi</title>
-        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     </head>
     <body>
-        <h2>İŞLEMLER</h2>
-        <table>
-            <tr>
-                <td><input type="checkbox" name="secenek1">1.İŞLEM</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox" name="secenek2">2.İŞLEM<br><br></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="ONAYLA"> </td>
-            </tr>
-        </table>
+        <div class="container">
+            <div class="columns">
+                <div class="column is-6 is-offset-3">
+                    <div class="card">
+                        <div class="has-text-centered">
+                            <div class="card-content">
+                            <p class="subtitle is-3">
+                                İŞLEMLER
+                            </p>
+                            <p class="subtitle">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    1.İşlem 
+                                </label></br>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    2.İşlem 
+                                </label></br>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    3.İşlem 
+                                </label>
+                            </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <button class="button is-success is-fullwidth">
+                            Onayla
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

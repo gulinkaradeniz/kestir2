@@ -1,39 +1,67 @@
 <html>
     <head>
         <title>Kayıt Ol</title>
-        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     </head>
     <body>
-            <h2>KAYIT OL</h2>
         <form>
-            <table>
-                <tr>
-                    <td>Ad Soyad</td>
-                    <td>:</td>
-                    <td><input type="text" ><br></td>
-                </tr>
-                <tr>
-                    <td>Telefon numarası</td>
-                    <td>:</td>
-                    <td><input type="text" ><br></td>
-                </tr>
-                <tr>
-                    <td>E-mail adresi</td>
-                    <td>:</td>
-                    <td><input type="text" ><br></td>
-                </tr>
-                <tr>
-                    <td>Şifre</td>
-                    <td>:</td>
-                    <td><input type="text" ><br></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td><input type="submit" value="KAYIT OL"><br></td>
-                </tr>
-            </table>
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-6 is-offset-3">
+                        <div class="card">
+                            <div class="has-text-centered">
+                                <div class="card-content">
+                                <p class="subtitle is-3">
+                                    KAYIT OL
+                                </p>
+                                <p class="subtitle">
+                                    <div class="field giris">
+                                        <p class="control has-icons-left">
+                                        <input class="input" placeholder="Ad Soyad">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="field giris">
+                                        <p class="control has-icons-left">
+                                        <input class="input" placeholder="Telefon numarası">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                        </p>
+                                    </div>
+                    
+                                    <div class="field giris">
+                                        <p class="control has-icons-left">
+                                        <input class="input" placeholder="E-mail">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                        </p>
+                                    </div>
+                    
+                                    <div class="field giris">
+                                        <p class="control has-icons-left">
+                                        <input class="input" placeholder="Şifre">
+                                        <span class="icon is-small is-left">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                        </p>
+                                    </div>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <button class="button is-success is-fullwidth">
+                                Kayıt Ol
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
-
     </body>
 </html>

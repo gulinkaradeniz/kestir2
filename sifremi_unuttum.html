@@ -1,28 +1,51 @@
 <html>
     <head>
         <title>Şifremi Unuttum</title>
-        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     </head>
     <body>
-        <h2>ŞİFREMİ UNUTTUM</h2>
         <form>
-            <table>
-                <tr>
-                    <td>Telefon numarası</td>
-                    <td>:</td>
-                    <td><input type="text"><br></td>
-                </tr>
-                <tr>
-                    <td>Yeni Şifre</td>
-                    <td>:</td>
-                    <td><input type="text"><br></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td><input type="submit" value="ŞİFRE YENİLE"><br></td>
-                </tr>
-            </table>
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-6 is-offset-3">
+                        <div class="card">
+                            <div class="has-text-centered">
+                                <div class="card-content">
+                                <p class="subtitle is-3">
+                                    ŞİFREMİ UNUTTUM
+                                </p>
+                                <p class="subtitle">
+                                    <div class="container">
+                                        <div class="field giris">
+                                            <p class="control has-icons-left">
+                                            <input class="input" placeholder="Telefon numarası">
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-lock"></i>
+                                            </span>
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="field giris">
+                                            <p class="control has-icons-left">
+                                            <input class="input" placeholder="Yeni Şifre">
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-lock"></i>
+                                            </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <button class="button is-success is-fullwidth">
+                                Şifre Yenile
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </body>
 </html>
