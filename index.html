@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     </head>
     <body>
-        <form>
+        
             <div class="container">
                 <div class="columns">
                     <div class="column is-6 is-offset-3">
@@ -16,38 +16,41 @@
                                     <p class="subtitle is-3">
                                         <img src="img\hair.png" width="200" height="200">
                                     </p>
-                                    <p class="subtitle">
-                                        <div class="field giris">
-                                            <p class="control has-icons-left has-icons-right">
-                                            <input class="input" placeholder="Telefon numaranız">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-phone"></i>
-                                            </span>
-                                            <span class="icon is-small is-right">
-                                                <i class="fas fa-check"></i>
-                                            </span>
-                                            </p>
-                                        </div>
-                                        <div class="field giris">
-                                            <p class="control has-icons-left">
-                                            <input class="input" placeholder="Şifre">
-                                            <span class="icon is-small is-left">
-                                                <i class="fas fa-lock"></i>
-                                            </span>
-                                            </p>
-                                        </div>
-                                        <div class="field">
-                                            <button class="button is-success is-fullwidth">
-                                                Giriş Yap
-                                            </button>
-                                        </div>
+                                    <form>
+                                        <p class="subtitle">
+                                            <div class="field giris">
+                                                <p class="control has-icons-left has-icons-right">
+                                                <input class="input" placeholder="Telefon numaranız">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-phone"></i>
+                                                </span>
+                                                <span class="icon is-small is-right">
+                                                    <i class="fas fa-check"></i>
+                                                </span>
+                                                </p>
+                                            </div>
+                                            <div class="field giris">
+                                                <p class="control has-icons-left">
+                                                <input class="input" placeholder="Şifre">
+                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-lock"></i>
+                                                </span>
+                                                </p>
+                                            </div>
+
+                                            <div class="field">
+                                                <button class="button is-success is-fullwidth"  onclick="javascript:location.href='uye_anasayfa.html'">
+                                                    Giriş Yap
+                                                </button>
+                                            </div>
+                                    </form>
                                         <div class="field">
                                             <button class="button is-success is-fullwidth" onclick="javascript:location.href='kayit_ol.html'">
                                                 Kayıt Ol
                                             </button>
                                         </div>
                                         <div class="column has-text-centered">
-                                            <a href="">Şifremi Unuttum</a>
+                                            <a href="sifremi_unuttum.html">Şifremi Unuttum</a>
                                         </div>
                                     </p>
                                 </div>
@@ -56,6 +59,6 @@
                     </div>
                 </div>
             </div>
-        </form>
+       
     </body>
 </html>
