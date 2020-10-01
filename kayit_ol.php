@@ -1,3 +1,11 @@
+<?php
+   $adsoyad = $_POST['adsoyad'];
+   $telefon = $_POST['telefon'];
+   $email = $_POST['email'];
+   $sifre = $_POST['sifre'];
+
+?>
+
 <html>
     <head>
         <title>Kayıt Ol</title>
@@ -16,10 +24,10 @@
                                 KAYIT OL
                             </p>
                                 <p class="subtitle">
-                                    <form action="uye_anasayfa.html"></form>
+                                    <form action="uye_anasayfa.php" method="POST">
                                         <div class="field giris">
                                             <p class="control has-icons-left">
-                                            <input class="input" placeholder="Ad Soyad">
+                                            <input class="input" placeholder="Ad Soyad" name="adsoyad" required>
                                             <span class="icon is-small is-left">
                                                 <i class="fas fa-user"></i>
                                             </span>
@@ -27,7 +35,7 @@
                                         </div>
                                         <div class="field giris">
                                             <p class="control has-icons-left">
-                                            <input class="input" placeholder="Telefon numarası">
+                                            <input class="input" type="phone"placeholder="Telefon numarası" name="telefon" required>
                                             <span class="icon is-small is-left">
                                                 <i class="fas fa-phone"></i>
                                             </span>
@@ -35,7 +43,7 @@
                                         </div>
                                         <div class="field giris">
                                             <p class="control has-icons-left">
-                                            <input class="input" placeholder="E-mail">
+                                            <input class="input" type="mailuid"placeholder="E-mail" name="email" required>
                                             <span class="icon is-small is-left">
                                                 <i class="fas fa-envelope"></i>
                                             </span>
@@ -43,14 +51,14 @@
                                         </div>
                                         <div class="field giris">
                                             <p class="control has-icons-left">
-                                            <input class="input" placeholder="Şifre">
+                                            <input class="input" type="password"placeholder="Şifre" name="sifre" required>
                                             <span class="icon is-small is-left">
                                                 <i class="fas fa-lock"></i>
                                             </span>
                                             </p>
                                         </div>
                                         <div class="field">
-                                            <button class="button is-success is-fullwidth" onclick="javascript:location.href='uye_anasayfa.html'">
+                                            <button class="button is-success is-fullwidth" >
                                                 Kayıt Ol
                                             </button>
                                         </div>
@@ -62,7 +70,7 @@
                         
                             <div id="navbarBasicExample" class="navbar-menu">
                                 <div class="navbar-start">
-                                <a class="navbar-item" href="index.html">
+                                <a class="navbar-item" href="index.php">
                                     <i class="fas fa-chevron-left"></i>
                                 </a>
                                 

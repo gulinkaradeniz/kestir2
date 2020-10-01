@@ -28,7 +28,7 @@
                             
                             <div id="navbarBasicExample" class="navbar-menu">
                                <div class="navbar-start">
-                                <a class="navbar-item" href="uye_anasayfa.html">
+                                <a class="navbar-item" href="uye_anasayfa.php">
                                     <i class="fas fa-chevron-left"></i>
                                 </a>
                                 

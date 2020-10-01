@@ -1,3 +1,7 @@
+<?php
+   $telefon = $_POST['telefon'];
+   $sifre = $_POST['sifre'];
+?>
 <html>
     <head>
         <title>Şifremi Unuttum</title>
@@ -16,12 +20,12 @@
                                 <p class="subtitle is-3">
                                     ŞİFREMİ UNUTTUM
                                 </p>
-                                <form action="index.html">
+                                <form action="index.php" method="POST">
                                     <p class="subtitle">
                                         <div class="container">
                                             <div class="field giris">
                                                 <p class="control has-icons-left">
-                                                <input class="input" placeholder="Telefon numarası">
+                                                <input class="input" type="phone" placeholder="Telefon numarası" name="telefon" required>
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-phone"></i>
                                                 </span>
@@ -30,28 +34,29 @@
                                             
                                             <div class="field giris">
                                                 <p class="control has-icons-left">
-                                                <input class="input" placeholder="Yeni Şifre">
+                                                <input class="input" type="password"placeholder="Yeni Şifre" name="sifre" required> 
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-lock"></i>
                                                 </span>
                                                 </p>
                                             </div>
                                             <div class="field">
-                                                <button class="button is-success is-fullwidth" onclick="javascript:location.href='index.html'">
+                                                <button class="button is-success is-fullwidth">
                                                     Şifre Yenile
                                                 </button>
                                             </div>
-                                    </form>
+                                    
                                         
-                                    </div>
-                                </p>
+                                        </div>
+                                    </p>
+                                </form>
                                 </div>
                             </div>
                             <nav class="navbar" role="navigation" aria-label="main navigation">
                             
                                 <div id="navbarBasicExample" class="navbar-menu">
                                    <div class="navbar-start">
-                                    <a class="navbar-item" href="index.html">
+                                    <a class="navbar-item" href="index.php">
                                         <i class="fas fa-chevron-left"></i>
                                     </a>
                                     

@@ -18,14 +18,14 @@
                             <p class="subtitle">
                                 <div class="field">
                                     <p class="control">
-                                    <button class="button is-success is-fullwidth" onclick="javascript:location.href='randevu_basarili.html'">
+                                    <button class="button is-success is-fullwidth" onclick="javascript:location.href='randevu_basarili.php'">
                                         RANDEVULAR
                                     </button>
                                     </p>
                                 </div>
                                 <div class="field">
                                     <p class="control">
-                                    <button class="button is-success is-fullwidth" onclick="javascript:location.href='islemler.html'">
+                                    <button class="button is-success is-fullwidth" onclick="javascript:location.href='islemler.php'">
                                         RANDEVU AL
                                     </button>
                                     </p>
@@ -59,7 +59,7 @@
                             
                             <div id="navbarBasicExample" class="navbar-menu">
                                <div class="navbar-start">
-                                <a class="navbar-item" href="index.html">
+                                <a class="navbar-item" href="index.php">
                                     <i class="fas fa-chevron-left"></i>
                                 </a>
                                 

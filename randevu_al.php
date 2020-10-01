@@ -18,14 +18,14 @@
                             <p class="subtitle">
                                 <div class="field">
                                     <p class="control">
-                                    <button class="button is-success is-fullwidth" onclick="javascript:location.href='islemler.html'">
+                                    <button class="button is-success is-fullwidth" onclick="javascript:location.href='islemler.php'">
                                         İŞLEMLER
                                     </button>
                                     </p>
                                 </div>
                                 <div class="field">
                                     <p class="control">
-                                    <button class="button is-success is-fullwidth" onclick="javascript:location.href='tarihsaat.html'">
+                                    <button class="button is-success is-fullwidth" onclick="javascript:location.href='tarihsaat.php'">
                                         TARİH/SAAT
                                     </button>
                                     </p>
@@ -37,18 +37,12 @@
                             
                             <div id="navbarBasicExample" class="navbar-menu">
                                <div class="navbar-start">
-                                <a class="navbar-item">
+                                <a class="navbar-item" href="uye_anasayfa.php">
                                     <i class="fas fa-chevron-left"></i>
                                 </a>
                                 
                             </div>
-                            <div id="navbarBasicExample" class="navbar-menu">
-                                <div class="navbar-end">
-                                 
-                                 <a class="navbar-item">
-                                     <i class="fas fa-chevron-right"></i>
-                                 </a>
-                             </div>
+                            
                         </nav>
                     </div>
                 </div>

@@ -16,7 +16,7 @@
                                 TARİH/SAAT
                             </p>
                             <p class="subtitle">
-                                <form action="randevu_basarili.html">
+                                <form action="randevu_basarili.php">
                                     <div class="control">
                                         <label>Tarih:</label>
                                         <div class="select is-success">
@@ -101,7 +101,7 @@
                             
                             <div id="navbarBasicExample" class="navbar-menu">
                                <div class="navbar-start">
-                                <a class="navbar-item" href="islemler.html">
+                                <a class="navbar-item" href="islemler.php">
                                     <i class="fas fa-chevron-left"></i>
                                 </a>
                                 
@@ -109,7 +109,7 @@
                             <div id="navbarBasicExample" class="navbar-menu">
                                 <div class="navbar-end">
                                  
-                                 <a class="navbar-item" href="randevu_basarili.html">
+                                 <a class="navbar-item" href="randevu_basarili.php">
                                      <i class="fas fa-chevron-right"></i>
                                  </a>
                              </div>

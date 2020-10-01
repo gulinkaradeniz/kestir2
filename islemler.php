@@ -10,7 +10,7 @@
             <div class="columns">
                 <div class="column is-6 is-offset-3">
                     <div class="card">
-                        <form action="tarihsaat.html">
+                        <form action="tarihsaat.php">
                             <div class="has-text-centered">
                                 <div class="card-content">
                                 <p class="subtitle is-3">
@@ -30,7 +30,7 @@
                                         3.İşlem 
                                     </label>
                                     <div class="field">
-                                        <button class="button is-success is-fullwidth" onclick="javascript:location.href='tarihsaat.html'">
+                                        <button class="button is-success is-fullwidth" onclick="javascript:location.href='tarihsaat.php'">
                                             Onayla
                                         </button>
                                     </div>
@@ -42,7 +42,7 @@
                             
                             <div id="navbarBasicExample" class="navbar-menu">
                                <div class="navbar-start">
-                                <a class="navbar-item" href="uye_anasayfa.html">
+                                <a class="navbar-item" href="uye_anasayfa.php">
                                     <i class="fas fa-chevron-left"></i>
                                 </a>
                                 
@@ -50,7 +50,7 @@
                             <div id="navbarBasicExample" class="navbar-menu">
                                 <div class="navbar-end">
                                  
-                                 <a class="navbar-item" href="tarihsaat.html">
+                                 <a class="navbar-item" href="tarihsaat.php">
                                      <i class="fas fa-chevron-right"></i>
                                  </a>
                              </div>

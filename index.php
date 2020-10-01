@@ -1,3 +1,8 @@
+
+<?php
+   $telefon = $_POST['telefon'];
+   $sifre = $_POST['sifre'];
+?>
 <html>
     <head>
         <title>Anasayfa</title>
@@ -16,11 +21,11 @@
                                     <p class="subtitle is-3">
                                         <img src="img\hair.png" width="200" height="200">
                                     </p>
-                                    <form action="uye_anasayfa.html">
+                                    <form action="uye_anasayfa.php" method="POST">
                                         <p class="subtitle">
                                             <div class="field giris">
                                                 <p class="control has-icons-left has-icons-right">
-                                                <input class="input" placeholder="Telefon numaranız">
+                                                <input class="input" type="phone" placeholder="Telefon numaranız" name="telefon" required>
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-phone"></i>
                                                 </span>
@@ -31,7 +36,7 @@
                                             </div>
                                             <div class="field giris">
                                                 <p class="control has-icons-left">
-                                                <input class="input" placeholder="Şifre">
+                                                <input class="input" type="password" placeholder="Şifre" name="sifre" required>
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-lock"></i>
                                                 </span>
@@ -39,18 +44,18 @@
                                             </div>
 
                                             <div class="field">
-                                                <button class="button is-success is-fullwidth"  onclick="javascript:location.href='uye_anasayfa.html'">
+                                                <button class="button is-success is-fullwidth">
                                                     Giriş Yap
                                                 </button>
                                             </div>
                                     </form>
                                     <div class="field">
-                                        <button class="button is-success is-fullwidth" onclick="javascript:location.href='kayit_ol.html'">
+                                        <button class="button is-success is-fullwidth" onclick="javascript:location.href='kayit_ol.php'">
                                             Kayıt Ol
                                         </button>
                                     </div>
                                     <div class="column has-text-centered">
-                                        <a href="sifremi_unuttum.html">Şifremi Unuttum</a>
+                                        <a href="sifremi_unuttum.php">Şifremi Unuttum</a>
                                     </div>
                                     <nav class="navbar" role="navigation" aria-label="main navigation">
                                         <div id="navbarBasicExample" class="navbar-menu">
@@ -89,3 +94,4 @@
         </div>
     </body>
 </html>
+
