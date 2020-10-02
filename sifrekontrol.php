@@ -16,9 +16,15 @@ if(isset($_POST['telefon']) && isset($_POST['sifre']) ) {
     $sorgu->execute();
 
     if ($sorgu->affected_rows > 0) {
+        session_start();
+        $_SESSION['sistemmesaji']="YENİ ŞİFRENİZLE GİRİŞ YAPABİLİRSİNİZ.";
+        $_SESSION['sistemmesajicss']="is-link is-light";
         header("Location:index.php");
     } else {
-        echo "Herhangi bir kayıt güncellenemedi.";
+        session_start();
+        $_SESSION['sistemmesaji']="BU TELEFON NUMARASINA AİT KAYIT BULUNMAMAKTADIR.";
+        $_SESSION['sistemmesajicss']="is-danger is-light";
+        header('Location: index.php');
     }
 
     $sorgu->close();

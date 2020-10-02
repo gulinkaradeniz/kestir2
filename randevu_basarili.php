@@ -36,6 +36,14 @@ include "loginkontrol.php";
                                 </a>
                                 
                             </div>
+                            <div id="navbarBasicExample" class="navbar-menu">
+                                <div class="navbar-start">
+                                    <a class="navbar-item" href="cikis.php">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                    
+                                </div>
+                                </div>
                             
                         </nav>
                     </div>

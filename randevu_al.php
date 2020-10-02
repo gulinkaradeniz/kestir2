@@ -33,6 +33,15 @@ include "loginkontrol.php";
                                     </button>
                                     </p>
                                 </div>
+                                <hr>
+
+                                <div class="field">
+                                    <p class="control">
+                                    <button class="button is-info is-fullwidth" onclick="javascript:location.href='randevu_basarili.php'">
+                                        RANDEVUYU ONAYLA
+                                    </button>
+                                    </p>
+                                </div>
                             </p>
                             </div>
                         </div>

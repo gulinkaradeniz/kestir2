@@ -13,11 +13,13 @@ include "loginkontrol.php";
             <div class="columns">
                 <div class="column is-6 is-offset-3">
                     <div class="card">
+                    
                         <div class="has-text-centered">
                             <div class="card-content">
                             <p class="subtitle is-3">
                                 ANASAYFA
                             </p>
+                            <?php include "sistemmesaji.php" ?>
                             <p class="subtitle">
                                 <div class="field">
                                     <p class="control">
@@ -28,7 +30,7 @@ include "loginkontrol.php";
                                 </div>
                                 <div class="field">
                                     <p class="control">
-                                    <button class="button is-success is-fullwidth" onclick="javascript:location.href='islemler.php'">
+                                    <button class="button is-success is-fullwidth" onclick="javascript:location.href='randevu_al.php'">
                                         RANDEVU AL
                                     </button>
                                     </p>
@@ -76,6 +78,8 @@ include "loginkontrol.php";
                                     </a>
                                     
                                 </div>
+                                </div>
+
                             
                         </nav>
                     </div>

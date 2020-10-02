@@ -1,5 +1,9 @@
 <?php
 include "loginkontrol.php";
+if($_SESSION['isadmin'] == false){
+    header('Location: index.php');
+    die();
+}
 ?>
 <html>
     <head>
@@ -18,7 +22,10 @@ include "loginkontrol.php";
                                 <p class="subtitle is-3">
                                     RANDEVULAR
                                 </p>
+                            
+                            <?php include "sistemmesaji.php" ?>
                             </div>
+
                         <p class="subtitle">
                             <div class="box">
                                 <article class="media">
@@ -75,6 +82,14 @@ include "loginkontrol.php";
                                      <i class="fas fa-chevron-right"></i>
                                  </a>
                              </div>
+                             <div id="navbarBasicExample" class="navbar-menu">
+                                <div class="navbar-start">
+                                    <a class="navbar-item" href="cikis.php">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                    
+                                </div>
+                                </div>
                         </nav>
                     </div>
                 </div>

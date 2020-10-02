@@ -26,6 +26,7 @@ include "baglanti.php";
                                     <p class="subtitle is-3">
                                         <img src="img\hair.png" width="200" height="200">
                                     </p>
+                                    <?php include "sistemmesaji.php" ?>
                                     <form action="giriskontrol.php" method="POST">
                                         <p class="subtitle">
                                             <div class="field giris">

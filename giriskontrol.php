@@ -5,21 +5,32 @@ include "baglanti.php";
 if(isset($_POST['telefon']) && isset($_POST['sifre']) ) {
     $telefon=$_POST['telefon'];
     $sifre=$_POST['sifre'];
-
-    $sql="SELECT telefon,sifre FROM kestir2db.users where telefon='$telefon' and sifre='$sifre'";
+    $sql="SELECT * FROM kestir2db.users where telefon='$telefon' and sifre='$sifre'";
     $sonuc=mysqli_query($mysqli,$sql);
 
     if ($sonuc->num_rows==0){
         session_start();
-        $_SESSION['telefon'] = $telefon;
         $_SESSION['login'] = false;
+        $_SESSION['sistemmesaji']="GİRİŞ BAŞARISIZ!";
+        $_SESSION['sistemmesajicss']="is-danger is-light";
         header('Location: index.php');
     }
     else{
-        session_start();
-        $_SESSION['telefon'] = $telefon;
-        $_SESSION['login'] = true;
-        header('Location: index.php');
+        while($satir=mysqli_fetch_array($sonuc))
+        {
+            session_start();
+            $_SESSION['telefon'] = $telefon;
+            $_SESSION['login'] = true;
+            $_SESSION['sistemmesajicss']="is-link is-light";
+            $_SESSION['sistemmesaji']="HOŞGELDİNİZ" . " " . $satir['adsoyad'];
+            if($satir['isadmin']==1){
+                $_SESSION['isadmin'] = true;
+                header('Location: randevular.php');
+            }else{
+                header('Location: index.php');
+
+            }
+        }
     }
 }
 ?>
