@@ -1,3 +1,6 @@
+<?php
+include "loginkontrol.php";
+?>
 <html>
     <head>
         <title>Tarih/Saat Seçimi</title>

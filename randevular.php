@@ -1,4 +1,6 @@
-
+<?php
+include "loginkontrol.php";
+?>
 <html>
     <head>
         <title>Randevularım</title>

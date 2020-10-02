@@ -1,3 +1,6 @@
+<?php
+include "loginkontrol.php";
+?>
 <html>
     <head>
         <title>İşlem Seçimi</title>

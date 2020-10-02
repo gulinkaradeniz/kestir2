@@ -1,7 +1,12 @@
 
 <?php
-   $telefon = $_POST['telefon'];
-   $sifre = $_POST['sifre'];
+session_start();
+if($_SESSION['login'] == true){
+    header('Location: uye_anasayfa.php');
+    die();
+}
+include "baglanti.php";
+
 ?>
 <html>
     <head>
@@ -21,7 +26,7 @@
                                     <p class="subtitle is-3">
                                         <img src="img\hair.png" width="200" height="200">
                                     </p>
-                                    <form action="uye_anasayfa.php" method="POST">
+                                    <form action="giriskontrol.php" method="POST">
                                         <p class="subtitle">
                                             <div class="field giris">
                                                 <p class="control has-icons-left has-icons-right">

@@ -1,9 +1,23 @@
 <?php
-   $adsoyad = $_POST['adsoyad'];
-   $telefon = $_POST['telefon'];
-   $email = $_POST['email'];
-   $sifre = $_POST['sifre'];
-
+include "baglanti.php";
+if(isset($_POST['telefon']) && isset($_POST['sifre']) && isset($_POST['adsoyad']) && isset($_POST['email']) ) {
+    $telefon=$_POST['telefon'];
+    $sifre=$_POST['sifre'];
+    $adsoyad=$_POST['adsoyad'];
+    $email=$_POST['email'];
+    
+    $sqlekle="INSERT INTO `kestir2db`.`users` (`adsoyad`, `telefon`, `email`, `sifre`) VALUES ('$adsoyad', '$telefon', '$email', '$sifre')";
+    $sonuc=mysqli_query($mysqli,$sqlekle);
+    if ($sonuc==0){
+    echo "<script>alert('Eklenemedi);</script>";
+    }
+    else{
+        session_start();
+         $_SESSION['telefon'] = $telefon;
+         $_SESSION['login'] = true;
+         header('Location: index.php');
+    }
+}
 ?>
 
 <html>
@@ -24,7 +38,7 @@
                                 KAYIT OL
                             </p>
                                 <p class="subtitle">
-                                    <form action="uye_anasayfa.php" method="POST">
+                                    <form   method="POST">
                                         <div class="field giris">
                                             <p class="control has-icons-left">
                                             <input class="input" placeholder="Ad Soyad" name="adsoyad" required>

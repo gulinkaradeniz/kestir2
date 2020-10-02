@@ -1,3 +1,6 @@
+<?php
+include "loginkontrol.php";
+?>
 <html>
     <head>
         <title>Üye Anasayfa</title>
@@ -64,6 +67,15 @@
                                 </a>
                                 
                             </div>
+
+                            
+                                <div id="navbarBasicExample" class="navbar-menu">
+                                <div class="navbar-start">
+                                    <a class="navbar-item" href="cikis.php">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                    
+                                </div>
                             
                         </nav>
                     </div>
