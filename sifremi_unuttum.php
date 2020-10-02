@@ -20,7 +20,7 @@
                                 <p class="subtitle is-3">
                                     ŞİFREMİ UNUTTUM
                                 </p>
-                                <form action="index.php" method="POST">
+                                <form action="sifrekontrol.php" method="POST">
                                     <p class="subtitle">
                                         <div class="container">
                                             <div class="field giris">
