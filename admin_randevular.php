@@ -78,7 +78,7 @@ if($_SESSION['isadmin'] == false){
                             <div id="navbarBasicExample" class="navbar-menu">
                                 <div class="navbar-end">
                                  
-                                 <a class="navbar-item">
+                                 <a class="navbar-item" href="admin_islem_ekle.php">
                                      <i class="fas fa-chevron-right"></i>
                                  </a>
                              </div>

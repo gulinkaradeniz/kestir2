@@ -61,7 +61,6 @@ include "loginkontrol.php";
                             </div>
                         </div>
                         <nav class="navbar" role="navigation" aria-label="main navigation">
-                            
                             <div id="navbarBasicExample" class="navbar-menu">
                                <div class="navbar-start">
                                 <a class="navbar-item" href="index.php">
@@ -69,8 +68,6 @@ include "loginkontrol.php";
                                 </a>
                                 
                             </div>
-
-                            
                                 <div id="navbarBasicExample" class="navbar-menu">
                                 <div class="navbar-start">
                                     <a class="navbar-item" href="cikis.php">
@@ -79,8 +76,6 @@ include "loginkontrol.php";
                                     
                                 </div>
                                 </div>
-
-                            
                         </nav>
                     </div>
                 </div>

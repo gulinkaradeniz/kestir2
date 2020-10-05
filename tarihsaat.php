@@ -23,54 +23,28 @@ include "loginkontrol.php";
                                     <div class="control">
                                         <label>Tarih:</label>
                                         <div class="select is-success">
-                                            <select>
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                                <option>6</option>
-                                                <option>7</option>
-                                                <option>8</option>
-                                                <option>9</option>
-                                                <option>10</option>
-                                                <option>11</option>
-                                                <option>12</option>
-                                                <option>13</option>
-                                                <option>14</option>
-                                                <option>15</option>
-                                                <option>16</option>
-                                                <option>17</option>
-                                                <option>18</option>
-                                                <option>19</option>
-                                                <option>20</option>
-                                                <option>21</option>
-                                                <option>22</option>
-                                                <option>23</option>
-                                                <option>24</option>
-                                                <option>25</option>
-                                                <option>26</option>
-                                                <option>27</option>
-                                                <option>28</option>
-                                                <option>29</option>
-                                                <option>30</option>
-                                                <option>31</option>
+                                            <select name="gun">
+                                              <?php 
+                                              for ($i=1; $i < 32; $i++) { 
+                                                  echo "<option value=". $i .">".$i."</option>";
+                                              }
+                                              ?>
                                             </select>
                                         </div>
                                         <div class="select is-warning">
                                             <select>
-                                                <option>Ocak</option>
-                                                <option>Şubat</option>
-                                                <option>Mart</option>
-                                                <option>Nisan</option>
-                                                <option>Mayıs</option>
-                                                <option>Haziran</option>
-                                                <option>Temmuz</option>
-                                                <option>Ağustos</option>
-                                                <option>Eylül</option>
-                                                <option>Ekim</option>
-                                                <option>Kasım</option>
-                                                <option>Aralık</option>
+                                                <option value="Ocak">Ocak</option>
+                                                <option value="Şubat">Şubat</option>
+                                                <option value="Mart">Mart</option>
+                                                <option value="Nisan">Nisan</option>
+                                                <option value="Mayıs">Mayıs</option>
+                                                <option value="Haziran">Haziran</option>
+                                                <option value="Temmuz">Temmuz</option>
+                                                <option value="Ağustos">Ağustos</option>
+                                                <option value="Eylül">Eylül</option>
+                                                <option value="Ekim">Ekim</option>
+                                                <option value="Kasım">Kasım</option>
+                                                <option value="Aralık">Aralık</option>
                                             </select>
                                         </div>
                                     </div></br>
@@ -79,15 +53,15 @@ include "loginkontrol.php";
                                         <label>Saat:</label>
                                         <div class="select is-danger">
                                             <select>
-                                                <option>10:00</option>
-                                                <option>11:00</option>
-                                                <option>12:00</option>
-                                                <option>13:00</option>
-                                                <option>14:00</option>
-                                                <option>15:00</option>
-                                                <option>16:00</option>
-                                                <option>17:00</option>
-                                                <option>18:00</option>
+                                                <option value="10:00">10:00</option>
+                                                <option value="11:00">11:00</option>
+                                                <option value="12:00">12:00</option>
+                                                <option value="13:00">13:00</option>
+                                                <option value="14:00">14:00</option>
+                                                <option value="15:00">15:00</option>
+                                                <option value="16:00">16:00</option>
+                                                <option value="17:00">17:00</option>
+                                                <option value="18:00">18:00</option>
                                             </select>
                                         </div>
                                     </div></br>

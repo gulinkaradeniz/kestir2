@@ -25,7 +25,7 @@ if(isset($_POST['telefon']) && isset($_POST['sifre']) ) {
             $_SESSION['sistemmesaji']="HOŞGELDİNİZ" . " " . $satir['adsoyad'];
             if($satir['isadmin']==1){
                 $_SESSION['isadmin'] = true;
-                header('Location: randevular.php');
+                header('Location: admin_randevular.php');
             }else{
                 header('Location: index.php');
 

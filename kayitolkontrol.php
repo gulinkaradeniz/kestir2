@@ -12,17 +12,15 @@ if(isset($_POST['telefon']) && isset($_POST['sifre']) && isset($_POST['adsoyad']
     if ($sonuc2->num_rows==0){
         $sqlekle="INSERT INTO `kestir2db`.`users` (`adsoyad`, `telefon`, `email`, `sifre`) VALUES ('$adsoyad', '$telefon', '$email', '$sifre')";
         $sonuc=mysqli_query($mysqli,$sqlekle);
-        if ($sonuc==0){
-            echo "<script>alert('Eklenemedi);</script>";
-            }
-        else{
-            session_start();
-            $_SESSION['telefon'] = $telefon;
-            $_SESSION['login'] = true;
-            $_SESSION['sistemmesaji']="KAYIT BAŞARILI";
-            $_SESSION['sistemmesajicss']="is-link is-light";
-            header('Location: index.php');
-        }
+
+        
+        session_start();
+        $_SESSION['telefon'] = $telefon;
+        $_SESSION['login'] = true;
+        $_SESSION['sistemmesaji']="KAYIT BAŞARILI";
+        $_SESSION['sistemmesajicss']="is-link is-light";
+        header('Location: index.php');
+        
     }
     else{
         session_start();

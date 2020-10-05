@@ -1,5 +1,13 @@
 <?php
 include "loginkontrol.php";
+include "baglanti.php";
+if(isset($_POST['islemler'])) {
+    $islemler = $_POST['islemler'];
+    echo 'Seçtiğiniz islemler: <br/>';
+    foreach($islemler as $islem) {
+        echo ' * ' . $islem . ' <br/>';
+    }
+} 
 ?>
 <html>
     <head>
@@ -13,32 +21,37 @@ include "loginkontrol.php";
             <div class="columns">
                 <div class="column is-6 is-offset-3">
                     <div class="card">
-                        <form action="randevu_al.php">
+                        <form action="islemlerkontrol.php" method="POST">
                             <div class="has-text-centered">
-                                <div class="card-content">
+                                
                                 <p class="subtitle is-3">
                                     İŞLEMLER
                                 </p>
-                                <p class="subtitle">
-                                    <label class="checkbox">
-                                        <input type="checkbox">
-                                        1.İşlem 
-                                    </label></br>
-                                    <label class="checkbox">
-                                        <input type="checkbox">
-                                        2.İşlem 
-                                    </label></br>
-                                    <label class="checkbox">
-                                        <input type="checkbox">
-                                        3.İşlem 
-                                    </label>
-                                    <div class="field">
+                               
+                                <?php include "sistemmesaji.php" ?>
+                                
+                                <?php
+                                
+                                $sorgu = $mysqli->query("SELECT * FROM islemler");
+                                if($sorgu->num_rows>0){
+                                    while($satir=$sorgu->fetch_assoc()){?>
+
+                                    <input type="checkbox"name="islemler[]" value="<?php echo $satir["isim"]; ?>">
+                                
+                                    <?php
+                                    $id = $satir['id']; 
+                                    echo $satir["isim"];?><br>
+                                    </input>
+                                    <?php
+                                    }
+                                }
+                                ?>
+                                 <div class="field">
                                         <button class="button is-success is-fullwidth" onclick="javascript:location.href='randevu_al.php'">
                                             Onayla
                                         </button>
                                     </div>
-                                </p>
-                                </div>
+                               
                             </div>
                         </form>
                         <nav class="navbar" role="navigation" aria-label="main navigation">

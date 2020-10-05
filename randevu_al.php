@@ -18,6 +18,7 @@ include "loginkontrol.php";
                             <p class="subtitle is-3">
                                 RANDEVU AL
                             </p>
+                            <?php include "sistemmesaji.php" ?>
                             <p class="subtitle">
                                 <div class="field">
                                     <p class="control">
@@ -34,14 +35,15 @@ include "loginkontrol.php";
                                     </p>
                                 </div>
                                 <hr>
-
-                                <div class="field">
-                                    <p class="control">
-                                    <button class="button is-info is-fullwidth" onclick="javascript:location.href='randevu_basarili.php'">
-                                        RANDEVUYU ONAYLA
-                                    </button>
-                                    </p>
-                                </div>
+                                <form action="islemlerkontrol.php" method="POST">
+                                    <div class="field">
+                                        <p class="control">
+                                        <button class="button is-info is-fullwidth" onclick="javascript:location.href='randevu_basarili.php'">
+                                            RANDEVUYU ONAYLA
+                                        </button>
+                                        </p>
+                                    </div>
+                                </form>
                             </p>
                             </div>
                         </div>
