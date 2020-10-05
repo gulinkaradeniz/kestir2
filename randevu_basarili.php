@@ -1,5 +1,6 @@
 <?php
 include "loginkontrol.php";
+include "baglanti.php";
 ?>
 <html>
     <head>
@@ -18,11 +19,45 @@ include "loginkontrol.php";
                             <p class="subtitle is-3">
                                 RANDEVULARINIZ
                             </p>
+                            <?php include "sistemmesaji.php"; ?>
                             <p class="subtitle">
                                 <div class="content">
-                                    <li>1.Randevu</li>
-                                    <li>2.Randevu</li>
-                                    <li>3.Randevu</li>
+                                <?php
+                                $userid=intval($_SESSION['userid']);     
+                                $sorgu = $mysqli->query("SELECT * FROM tasks WHERE user=$userid");
+                                    if($sorgu->num_rows>0){
+                                        while($satir=$sorgu->fetch_assoc()){?>
+                                            <p class="subtitle">
+                                                <div class="box">   
+                                                    <div class="level-left">
+                                                        <?php
+                                                        echo $satir["taskdate"]."<br>";
+                                                        
+                                                        $dizi=array($satir["operations"]);
+                                                        foreach($dizi as $islem){
+                                                            $islem=intval($islem);
+                                                            
+                                                            $sorgu = $mysqli->query("SELECT * FROM islemler where id=$islem");
+                                                            while($satir=$sorgu->fetch_assoc()){
+                                                               
+                                                                echo "Seçilen işlem=".$satir["isim"]."<br>";
+                                                            }
+                                                        }
+                                                        
+                                                        ?>
+
+                                                        
+                                                            
+                                                                
+                                                    </div>
+                                                </div>
+                                            </p>
+                                                        
+                                            <?php
+                                        }
+                                    }
+                                ?>
+
                                 </div>
                             </p>
                             </div>

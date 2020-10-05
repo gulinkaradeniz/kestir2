@@ -1,5 +1,4 @@
 <?php 
-session_start();
 if(isset($_SESSION['sistemmesaji'])){
     ?>
     <div class="notification <?php echo $_SESSION['sistemmesajicss'] ?>">

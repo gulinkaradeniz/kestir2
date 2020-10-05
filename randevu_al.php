@@ -1,5 +1,6 @@
 <?php
 include "loginkontrol.php";
+include "baglanti.php";
 ?>
 <html>
     <head>
@@ -35,15 +36,34 @@ include "loginkontrol.php";
                                     </p>
                                 </div>
                                 <hr>
-                                <form action="islemlerkontrol.php" method="POST">
-                                    <div class="field">
-                                        <p class="control">
-                                        <button class="button is-info is-fullwidth" onclick="javascript:location.href='randevu_basarili.php'">
-                                            RANDEVUYU ONAYLA
-                                        </button>
-                                        </p>
-                                    </div>
-                                </form>
+                                <?php
+                                if(isset($_SESSION["secilenislemler"])){
+                                    $islemler=$_SESSION["secilenislemler"];
+                                
+                                    foreach($islemler as $islem){
+                                    $islem=intval($islem);
+                                    $sorgu = $mysqli->query("SELECT * FROM islemler where id=$islem");
+                                    while($satir=$sorgu->fetch_assoc()){
+                                       
+                                        echo "Seçilen işlem=".$satir["isim"]."<br>";
+                                    }
+
+                                }
+
+                                }
+
+                                if(isset($_SESSION["secilentarih"])){
+                                    echo "Seçilen tarih=".($_SESSION["secilentarih"]);
+                                }
+                                ?>
+                            
+                                <div class="field">
+                                    <p class="control">
+                                    <button class="button is-info is-fullwidth" onclick="javascript:location.href='randevu_kaydet.php'">
+                                        RANDEVUYU ONAYLA
+                                    </button>
+                                    </p>
+                                </div>
                             </p>
                             </div>
                         </div>

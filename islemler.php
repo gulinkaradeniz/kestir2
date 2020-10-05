@@ -1,6 +1,7 @@
 <?php
 include "loginkontrol.php";
 include "baglanti.php";
+unset($_SESSION['secilenislemler']);
 if(isset($_POST['islemler'])) {
     $islemler = $_POST['islemler'];
     echo 'Seçtiğiniz islemler: <br/>';
@@ -36,18 +37,19 @@ if(isset($_POST['islemler'])) {
                                 if($sorgu->num_rows>0){
                                     while($satir=$sorgu->fetch_assoc()){?>
 
-                                    <input type="checkbox"name="islemler[]" value="<?php echo $satir["isim"]; ?>">
+                                    <input type="checkbox"name="islemler[]" value="<?php echo $satir["id"]; ?>"/>
                                 
                                     <?php
-                                    $id = $satir['id']; 
-                                    echo $satir["isim"];?><br>
-                                    </input>
+                                 
+                                    echo $satir["isim"];?>
+                                    <br>
+                                   
                                     <?php
                                     }
                                 }
                                 ?>
                                  <div class="field">
-                                        <button class="button is-success is-fullwidth" onclick="javascript:location.href='randevu_al.php'">
+                                        <button class="button is-success is-fullwidth">
                                             Onayla
                                         </button>
                                     </div>

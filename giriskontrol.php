@@ -9,7 +9,7 @@ if(isset($_POST['telefon']) && isset($_POST['sifre']) ) {
     $sonuc=mysqli_query($mysqli,$sql);
 
     if ($sonuc->num_rows==0){
-        session_start();
+
         $_SESSION['login'] = false;
         $_SESSION['sistemmesaji']="GİRİŞ BAŞARISIZ!";
         $_SESSION['sistemmesajicss']="is-danger is-light";
@@ -18,8 +18,8 @@ if(isset($_POST['telefon']) && isset($_POST['sifre']) ) {
     else{
         while($satir=mysqli_fetch_array($sonuc))
         {
-            session_start();
             $_SESSION['telefon'] = $telefon;
+            $_SESSION['userid'] = $satir['id'];
             $_SESSION['login'] = true;
             $_SESSION['sistemmesajicss']="is-link is-light";
             $_SESSION['sistemmesaji']="HOŞGELDİNİZ" . " " . $satir['adsoyad'];

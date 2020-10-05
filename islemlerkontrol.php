@@ -1,15 +1,28 @@
 <?php
+include "baglanti.php";
+$_SESSION['secilenislemler']=[];
 if(isset($_POST['islemler'])) {
     $islemler = $_POST['islemler'];
+
     foreach($islemler as $islem) {
-        session_start();
-        $_SESSION['islem'] = $islem;
-        $_SESSION['sistemmesaji']="İŞLEM SEÇİLDİ.";
-        $_SESSION['sistemmesajicss']="is-link is-light";
-        header('Location: randevu_al.php');
+        
+        $sorgu = $mysqli->query("SELECT isim FROM islemler WHERE id=$islem");
+        if($sorgu->num_rows>0){
+            while($satir=$sorgu->fetch_assoc()){?>
+        
+            <?php
+            array_push($_SESSION['secilenislemler'], $islem);?>
+            <br>
+            
+            <?php
+            }
+        }
+        
     }
+    $_SESSION['sistemmesaji']="YAPILACAK İŞLEM SEÇİLDİ.";
+    $_SESSION['sistemmesajicss']="is-link is-light";
+    header('Location: randevu_al.php');
 } else {
-    session_start();
     $_SESSION['sistemmesaji']="BİR İŞLEM SEÇİNİZ.";
     $_SESSION['sistemmesajicss']="is-danger is-light";
     header('Location: islemler.php');

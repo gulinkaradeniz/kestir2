@@ -1,5 +1,6 @@
 <?php
 include "loginkontrol.php";
+unset($_SESSION['secilentarih']);
 ?>
 <html>
     <head>
@@ -19,7 +20,7 @@ include "loginkontrol.php";
                                 TARİH/SAAT
                             </p>
                             <p class="subtitle">
-                                <form action="randevu_al.php">
+                                <form action="tarihsaat_kontrol.php" method="POST">
                                     <div class="control">
                                         <label>Tarih:</label>
                                         <div class="select is-success">
@@ -28,23 +29,23 @@ include "loginkontrol.php";
                                               for ($i=1; $i < 32; $i++) { 
                                                   echo "<option value=". $i .">".$i."</option>";
                                               }
-                                              ?>
+                                                ?>
                                             </select>
                                         </div>
                                         <div class="select is-warning">
-                                            <select>
-                                                <option value="Ocak">Ocak</option>
-                                                <option value="Şubat">Şubat</option>
-                                                <option value="Mart">Mart</option>
-                                                <option value="Nisan">Nisan</option>
-                                                <option value="Mayıs">Mayıs</option>
-                                                <option value="Haziran">Haziran</option>
-                                                <option value="Temmuz">Temmuz</option>
-                                                <option value="Ağustos">Ağustos</option>
-                                                <option value="Eylül">Eylül</option>
-                                                <option value="Ekim">Ekim</option>
-                                                <option value="Kasım">Kasım</option>
-                                                <option value="Aralık">Aralık</option>
+                                            <select name="ay">
+                                                <option value="01">Ocak</option>
+                                                <option value="02">Şubat</option>
+                                                <option value="03">Mart</option>
+                                                <option value="04">Nisan</option>
+                                                <option value="05">Mayıs</option>
+                                                <option value="06">Haziran</option>
+                                                <option value="07">Temmuz</option>
+                                                <option value="08">Ağustos</option>
+                                                <option value="09">Eylül</option>
+                                                <option value="10">Ekim</option>
+                                                <option value="11">Kasım</option>
+                                                <option value="12">Aralık</option>
                                             </select>
                                         </div>
                                     </div></br>
@@ -52,8 +53,8 @@ include "loginkontrol.php";
                                     <div class="control">
                                         <label>Saat:</label>
                                         <div class="select is-danger">
-                                            <select>
-                                                <option value="10:00">10:00</option>
+                                            <select name="saat">
+                                                <option value="10:00:00">10:00</option>
                                                 <option value="11:00">11:00</option>
                                                 <option value="12:00">12:00</option>
                                                 <option value="13:00">13:00</option>
@@ -66,11 +67,23 @@ include "loginkontrol.php";
                                         </div>
                                     </div></br>
                                     <div class="field">
-                                        <button class="button is-success is-fullwidth" onclick="javascript:location.href='randevu_al.php'">
+                                        <button class="button is-success is-fullwidth">
                                             Onayla
                                         </button>
                                     </div>
                                 </form>
+                                <?php
+                                if ($_POST) {
+                                $gelengun=$_POST['gun'];
+                                $gelenay=$_POST['ay'];
+                                $gelensaat=$_POST['saat'];
+                                echo $gelengun;
+                                echo $gelenay;
+                                echo $gelensaat;
+
+
+                                }
+                                ?>
                             </p>
                             </div>
                         </div>
