@@ -29,19 +29,27 @@ include "baglanti.php";
                                         while($satir=$sorgu->fetch_assoc()){?>
                                             <p class="subtitle">
                                                 <div class="box">   
-                                                    <div class="level-left">
+                                                    <div class="level-relative">
                                                         <?php
-                                                        echo $satir["taskdate"]."<br>";
+                                                      
+                                                        $tarih=date("d/m/Y ",strtotime($satir["taskdate"]));
+                                                        $saat=date("H:i",strtotime($satir["taskdate"]));
                                                         
-                                                        $dizi=array($satir["operations"]);
-                                                        foreach($dizi as $islem){
-                                                            $islem=intval($islem);
+                                                        echo "Tarih:".$tarih."&nbsp;";
+                                                        echo "Saat:".$saat."<br>";
+
+                                                        
+                                                        
+                                                        $islem = $satir["operations"];
+                                                        $dizi = explode (",",$islem);
+                                                        
+                                                        foreach($dizi as $anahtar => $deger){
+                                                            $deger=intval($deger);
+                                                            $sorgu2 = $mysqli->query("SELECT * FROM islemler WHERE id=$deger");
                                                             
-                                                            $sorgu = $mysqli->query("SELECT * FROM islemler where id=$islem");
-                                                            while($satir=$sorgu->fetch_assoc()){
-                                                               
-                                                                echo "Seçilen işlem=".$satir["isim"]."<br>";
-                                                            }
+                                                            while($s = $sorgu2->fetch_assoc()){
+                                                                echo $s["isim"]."&nbsp;";
+                                                            }   
                                                         }
                                                         
                                                         ?>

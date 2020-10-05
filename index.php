@@ -1,6 +1,5 @@
 
 <?php
-
 if($_SESSION['login'] == true){
     header('Location: uye_anasayfa.php');
     die();

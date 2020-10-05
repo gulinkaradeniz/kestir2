@@ -7,6 +7,7 @@ if(isset($_SESSION['secilentarih']) && isset($_SESSION['secilenislemler']) && is
     $tarih= $_SESSION['secilentarih'];
     $islem= implode(",",$_SESSION['secilenislemler']);
     $userid= $_SESSION['userid'];
+
  
     $sqlekle= "INSERT INTO tasks (user, operations, taskdate, status) VALUES ('$userid','$islem', '$tarih', '1')";
     $sonuc=mysqli_query($mysqli,$sqlekle);

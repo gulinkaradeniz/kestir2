@@ -1,5 +1,6 @@
 <?php
 include "loginkontrol.php";
+include "baglanti.php";
 unset($_SESSION['secilentarih']);
 ?>
 <html>
@@ -19,6 +20,7 @@ unset($_SESSION['secilentarih']);
                             <p class="subtitle is-3">
                                 TARİH/SAAT
                             </p>
+                            <?php include "sistemmesaji.php"; ?>
                             <p class="subtitle">
                                 <form action="tarihsaat_kontrol.php" method="POST">
                                     <div class="control">
@@ -54,7 +56,7 @@ unset($_SESSION['secilentarih']);
                                         <label>Saat:</label>
                                         <div class="select is-danger">
                                             <select name="saat">
-                                                <option value="10:00:00">10:00</option>
+                                                <option value="10:00">10:00</option>
                                                 <option value="11:00">11:00</option>
                                                 <option value="12:00">12:00</option>
                                                 <option value="13:00">13:00</option>
