@@ -1,5 +1,6 @@
 <?php
 include "loginkontrol.php";
+include "baglanti.php";
 if($_SESSION['isadmin'] == false){
     header('Location: index.php');
     die();
@@ -27,7 +28,7 @@ if($_SESSION['isadmin'] == false){
                             </div>
 
                         <p class="subtitle">
-                            <div class="box">
+                            
                                 <article class="media">
                                 <div class="media-left">
                                     <!--<figure class="image is-64x64">
@@ -37,33 +38,82 @@ if($_SESSION['isadmin'] == false){
                                 <div class="media-content">
                                     <div class="content">
                                     <p>
-                                        <strong>Ad Soyad</strong> <small>Telefon Numarası</small>
-                                        <br>
-                                            İşlem - Tarih - Saat
-                                    </p>
+                                    
+                                    <div class="content">
+                                    <?php
+                                    $userid=intval($_SESSION['userid']);     
+                                    $sorgu = $mysqli->query("SELECT * FROM tasks WHERE status=1 and iptal=0");
+                                        if($sorgu->num_rows>0){
+                                            while($satir=$sorgu->fetch_assoc()){?>
+                                                <p class="subtitle">
+                                                    <div class="box">   
+                                                        <div class="level-relative">
+                                                            <?php
+                                                        
+                                                            $tarih=date("d/m/Y ",strtotime($satir["taskdate"]));
+                                                            $saat=date("H:i",strtotime($satir["taskdate"]));
+                                                            $id=$satir["id"];
+                                                            
+
+                                                            $userid3=intval($satir["user"]);
+                                                            $sorgu3 = $mysqli->query("SELECT * FROM users WHERE id='$userid3'");
+                                                            while($satir3=$sorgu3->fetch_assoc()){
+                                                                echo $satir3["adsoyad"]."-";
+                                                                echo $satir3["telefon"]."<br>";
+
+                                                            }
+                                                            echo "Tarih:".$tarih."&nbsp;";
+                                                            echo "Saat:".$saat."<br>";
+
+                                                            
+                                                            
+                                                            $islem = $satir["operations"];
+                                                            $dizi = explode (",",$islem);
+                                                            
+                                                            foreach($dizi as $anahtar => $deger){
+                                                                $deger=intval($deger);
+                                                                $sorgu2 = $mysqli->query("SELECT * FROM islemler WHERE id=$deger");
+                                                                
+                                                                while($s = $sorgu2->fetch_assoc()){
+                                                                    echo $s["isim"]."&nbsp;";
+                                                                   
+                                                                }   
+                                                            }
+                                                            
+                                                            
+                                                            ?>   
+                                                            <form method="POST">
+                                                                <nav class="level is-mobile">
+                                                                <div class="level-left">
+                                                                    <a  href="islemtamam.php?id=<?php echo $id; ?>"class="level-item" aria-label="reply">
+                                                                    <span class="icon has-text-success">
+                                                                        <i class="fas fa-check-square"></i>
+                                                                    </span>
+                                                                    </a>
+                                                                    
+                                                                    <a class="level-item" aria-label="like">
+                                                                    <span class="icon has-text-danger">
+                                                                        <i class="fas fa-ban"></i>
+                                                                    </span>
+                                                                    </a>
+                                                                </div>
+                                                                </nav>
+                                                            </form>     
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </p>
+                                                            
+                                                <?php
+                                                
+                                            }
+                                        }
+                                    ?>
                                     </div>
-                                    <nav class="level is-mobile">
-                                    <div class="level-left">
-                                        <a class="level-item" aria-label="reply">
-                                        <span class="icon has-text-success">
-                                            <i class="fas fa-check-square"></i>
-                                        </span>
-                                        </a>
-                                        <a class="level-item" aria-label="retweet">
-                                        <span class="icon is-small">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </span>
-                                        </a>
-                                        <a class="level-item" aria-label="like">
-                                        <span class="icon has-text-danger">
-                                            <i class="fas fa-ban"></i>
-                                        </span>
-                                        </a>
-                                    </div>
-                                    </nav>
+                                    </p>  
                                 </div>
                                 </article>
-                            </div>
+                            
                         </p>
                         </div>
                         <nav class="navbar" role="navigation" aria-label="main navigation">

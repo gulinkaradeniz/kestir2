@@ -61,7 +61,8 @@
                                                                 echo $satir["id"]."-";
                                                                 echo $satir["isim"]."-";
                                                                 echo $satir["sure"]."&nbsp;"."saat"." ";?>
-                                                            
+                                                            </div>
+                                                            <div class="level-right">
                                                                 <a href="sil.php?id=<?php echo $id; ?>" class="level-item" aria-label="retweet">
                                                                 <span class="icon has-text-danger">
                                                                     <i class="fas fa-trash-alt"></i>
@@ -72,8 +73,9 @@
                                                                     <i class="fas fa-pencil-alt"></i>
                                                                 </span>
                                                                 </a>
-                                                                
                                                             </div>
+                                                                
+                                                            
                                                         </div>
                                                     </p>
                                                         
@@ -93,7 +95,7 @@
                         
                             <div id="navbarBasicExample" class="navbar-menu">
                                 <div class="navbar-start">
-                                <a class="navbar-item" href="index.php">
+                                <a class="navbar-item" href="admin_randevular.php">
                                     <i class="fas fa-chevron-left"></i>
                                 </a>
                                 

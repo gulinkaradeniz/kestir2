@@ -24,7 +24,8 @@ include "baglanti.php";
                                 <div class="content">
                                 <?php
                                 $userid=intval($_SESSION['userid']);     
-                                $sorgu = $mysqli->query("SELECT * FROM tasks WHERE user=$userid");
+                                $sorgu = $mysqli->query("SELECT * FROM tasks WHERE status=1 and iptal=0 and user=$userid ORDER BY taskdate DESC");
+
                                     if($sorgu->num_rows>0){
                                         while($satir=$sorgu->fetch_assoc()){?>
                                             <p class="subtitle">
