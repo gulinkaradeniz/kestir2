@@ -21,6 +21,19 @@ include "baglanti.php";
                             </p>
                             <?php include "sistemmesaji.php" ?>
                             <p class="subtitle">
+                            <?php 
+                            if ($_SESSION["isadmin"]){?>
+                                <div class="field">
+                                    <p class="control">
+                                    <button class="button is-success is-fullwidth" onclick="javascript:location.href='uye_sec.php'">
+                                        ÜYELER
+                                    </button>
+                                    </p>
+                                </div>
+                            <?php
+                            }
+                            ?>
+
                                 <div class="field">
                                     <p class="control">
                                     <button class="button is-success is-fullwidth" onclick="javascript:location.href='islemler.php'">
@@ -37,6 +50,10 @@ include "baglanti.php";
                                 </div>
                                 <hr>
                                 <?php
+                                if(isset($_POST['uyeler'])) {
+                                    echo "Seçilen üye=".($_POST['uyeler'])."<br>";
+                                }
+
                                 if(isset($_SESSION["secilenislemler"])){
                                     $islemler=$_SESSION["secilenislemler"];
                                 

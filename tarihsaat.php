@@ -28,26 +28,34 @@ unset($_SESSION['secilentarih']);
                                         <div class="select is-success">
                                             <select name="gun">
                                               <?php 
+                                              $gun=date("d");
                                               for ($i=1; $i < 32; $i++) { 
-                                                  echo "<option value=". $i .">".$i."</option>";
+                                                if($gun == $i) {$selected = "selected";}
+                                                else{ $selected='';}
+                                                  echo "<option ".$selected." value=". $i .">".$i."</option>";
                                               }
                                                 ?>
                                             </select>
                                         </div>
                                         <div class="select is-warning">
+                                        <?php 
+                                        $ay=date("m");
+                                       
+                                        
+                                        ?>
                                             <select name="ay">
-                                                <option value="01">Ocak</option>
-                                                <option value="02">Şubat</option>
-                                                <option value="03">Mart</option>
-                                                <option value="04">Nisan</option>
-                                                <option value="05">Mayıs</option>
-                                                <option value="06">Haziran</option>
-                                                <option value="07">Temmuz</option>
-                                                <option value="08">Ağustos</option>
-                                                <option value="09">Eylül</option>
-                                                <option value="10">Ekim</option>
-                                                <option value="11">Kasım</option>
-                                                <option value="12">Aralık</option>
+                                                <option value="01"  <?php if($ay == "01") {echo "selected";}?>>Ocak</option>
+                                                <option value="02"  <?php if($ay == "02") {echo "selected";}?>>Şubat</option>
+                                                <option value="03"  <?php if($ay == "03") {echo "selected";}?>>Mart</option>
+                                                <option value="04"  <?php if($ay == "04") {echo "selected";}?>>Nisan</option>
+                                                <option value="05"  <?php if($ay == "05") {echo "selected";}?>>Mayıs</option>
+                                                <option value="06"  <?php if($ay == "06") {echo "selected";}?>>Haziran</option>
+                                                <option value="07"  <?php if($ay == "07") {echo "selected";}?>>Temmuz</option>
+                                                <option value="08"  <?php if($ay == "08") {echo "selected";}?>>Ağustos</option>
+                                                <option value="09"  <?php if($ay == "09") {echo "selected";}?>>Eylül</option>
+                                                <option value="10"  <?php if($ay == "10") {echo "selected";}?>>Ekim</option>
+                                                <option value="11"  <?php if($ay == "11") {echo "selected";}?>>Kasım</option>
+                                                <option value="12"  <?php if($ay == "12") {echo "selected";}?>>Aralık</option>
                                             </select>
                                         </div>
                                     </div></br>

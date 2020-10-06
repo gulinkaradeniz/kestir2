@@ -22,12 +22,29 @@ if($_SESSION['isadmin'] == false){
                             <div class="has-text-centered">
                                 <p class="subtitle is-3">
                                     RANDEVULAR
-                                </p>
+                                </p></br>
                             
                             <?php include "sistemmesaji.php" ?>
                             </div>
+                            <button class="button is-success is-warning is-fullwidth" onclick="javascript:location.href='randevu_al.php'">
+                                RANDEVU OLUŞTUR
+                            </button></br>
+                            <div class="control">
+                                <div class="select is-danger">
+                                    <select name="mySelect" onchange="myFunction(this)">
+                                        <option value="bekleyen" <?= $_GET["sorgu"] == "bekleyen" ? "selected" : "" ?>>BEKLEYEN İŞLEMLER</option>
+                                        <option value="iptal" <?= $_GET["sorgu"] == "iptal" ? "selected" : "" ?>>İPTAL OLAN İŞLEMLER</option>
+                                        <option value="tamamlanan" <?= $_GET["sorgu"] == "tamamlanan" ? "selected" : "" ?> >TAMAMLANAN İŞLEMLER</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <script>
+                            function myFunction(m) {
+                            window.location = '?sorgu=' + m.value;
+                            }
+                            </script>
 
-                        <p class="subtitle">
+                        <p class="subtitle" id="demo">
                             
                                 <article class="media">
                                 <div class="media-left">
@@ -41,8 +58,15 @@ if($_SESSION['isadmin'] == false){
                                     
                                     <div class="content">
                                     <?php
-                                    $userid=intval($_SESSION['userid']);     
-                                    $sorgu = $mysqli->query("SELECT * FROM tasks WHERE status=1 and iptal=0");
+                                    $userid=intval($_SESSION['userid']);    
+                                    $query = "SELECT * FROM tasks WHERE status=1 and iptal=0";
+                                    if(isset($_GET['sorgu'])) {
+                                        if($_GET['sorgu'] == "iptal") $query = "SELECT * FROM tasks WHERE iptal=1";
+                                        if($_GET['sorgu'] == "bekleyen") $query = "SELECT * FROM tasks WHERE status=1 and iptal=0";
+                                        if($_GET['sorgu'] == "tamamlanan") $query = "SELECT * FROM tasks WHERE  status=0";
+                                    }
+
+                                    $sorgu =$mysqli->query($query);
                                         if($sorgu->num_rows>0){
                                             while($satir=$sorgu->fetch_assoc()){?>
                                                 <p class="subtitle">
