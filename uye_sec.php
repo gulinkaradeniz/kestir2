@@ -25,15 +25,15 @@ unset($_SESSION['secilenuyeler']);
                                 <form action="randevu_al.php" method="POST">
                                     <?php
                                     $sorgu3 = $mysqli->query("SELECT * FROM users WHERE isadmin='0'");
+                                    
                                     ?>
                                     <div class="select is-success">
                                         <select name="uyeler">
                                             <?php 
                                             while($satir3=$sorgu3->fetch_assoc()){
-                                                $dizi=array($satir3["adsoyad"]."-".$satir3["telefon"]);
-                                                foreach ($dizi as $i) { 
-                                                    echo "<option value=". $i .">".$i."</option>";
-                                                }
+                                                $dizi=$satir3["adsoyad"]."-".$satir3["telefon"];
+                                                echo "<option value=". $satir3["id"] .">".$dizi."</option>";
+                                                
                                             }
                                             ?>
                                         </select>

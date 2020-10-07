@@ -100,6 +100,21 @@
                                 </a>
                                 
                             </div>
+                            <div id="navbarBasicExample" class="navbar-menu">
+                                <div class="navbar-end">
+                                 
+                                 <a class="navbar-item" href="admin_uyeler.php">
+                                     <i class="fas fa-chevron-right"></i>
+                                 </a>
+                             </div>
+                             <div id="navbarBasicExample" class="navbar-menu">
+                                <div class="navbar-start">
+                                    <a class="navbar-item" href="cikis.php">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                    
+                                </div>
+                            </div>
                             
                         </nav>
                     </div>

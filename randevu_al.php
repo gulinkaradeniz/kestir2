@@ -51,6 +51,7 @@ include "baglanti.php";
                                 <hr>
                                 <?php
                                 if(isset($_POST['uyeler'])) {
+                                    $_SESSION['userid']=intval($_POST['uyeler']);
                                     echo "Seçilen üye=".($_POST['uyeler'])."<br>";
                                 }
 

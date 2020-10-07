@@ -4,7 +4,9 @@ include "baglanti.php";
 if($_SESSION['isadmin'] == false){
     header('Location: index.php');
     die();
-}
+}if(isset($_GET["sorgu"])){
+$filtrele=$_GET["sorgu"];}
+else{$filtrele="";}
 ?>
 <html>
     <head>
@@ -20,6 +22,7 @@ if($_SESSION['isadmin'] == false){
                     <div class="card">
                         <div class="card-content">
                             <div class="has-text-centered">
+                            
                                 <p class="subtitle is-3">
                                     RANDEVULAR
                                 </p></br>
@@ -32,9 +35,9 @@ if($_SESSION['isadmin'] == false){
                             <div class="control">
                                 <div class="select is-danger">
                                     <select name="mySelect" onchange="myFunction(this)">
-                                        <option value="bekleyen" <?= $_GET["sorgu"] == "bekleyen" ? "selected" : "" ?>>BEKLEYEN İŞLEMLER</option>
-                                        <option value="iptal" <?= $_GET["sorgu"] == "iptal" ? "selected" : "" ?>>İPTAL OLAN İŞLEMLER</option>
-                                        <option value="tamamlanan" <?= $_GET["sorgu"] == "tamamlanan" ? "selected" : "" ?> >TAMAMLANAN İŞLEMLER</option>
+                                        <option value="bekleyen" <?= $filtrele == "bekleyen" ? "selected" : "" ?>>BEKLEYEN İŞLEMLER</option>
+                                        <option value="iptal" <?= $filtrele == "iptal" ? "selected" : "" ?>>İPTAL OLAN İŞLEMLER</option>
+                                        <option value="tamamlanan" <?= $filtrele == "tamamlanan" ? "selected" : "" ?> >TAMAMLANAN İŞLEMLER</option>
                                     </select>
                                 </div>
                             </div>
@@ -59,11 +62,11 @@ if($_SESSION['isadmin'] == false){
                                     <div class="content">
                                     <?php
                                     $userid=intval($_SESSION['userid']);    
-                                    $query = "SELECT * FROM tasks WHERE status=1 and iptal=0";
+                                    $query = "SELECT * FROM tasks INNER JOIN users ON users.id=tasks.user WHERE status=1 and iptal=0";
                                     if(isset($_GET['sorgu'])) {
-                                        if($_GET['sorgu'] == "iptal") $query = "SELECT * FROM tasks WHERE iptal=1";
-                                        if($_GET['sorgu'] == "bekleyen") $query = "SELECT * FROM tasks WHERE status=1 and iptal=0";
-                                        if($_GET['sorgu'] == "tamamlanan") $query = "SELECT * FROM tasks WHERE  status=0";
+                                        if($_GET['sorgu'] == "iptal") $query = "SELECT * FROM tasks INNER JOIN users ON users.id=tasks.user WHERE iptal=1";
+                                        if($_GET['sorgu'] == "bekleyen") $query = "SELECT * FROM tasks INNER JOIN users ON users.id=tasks.user  WHERE status=1 and iptal=0";
+                                        if($_GET['sorgu'] == "tamamlanan") $query = "SELECT * FROM tasks INNER JOIN users ON users.id=tasks.user  WHERE  status=0";
                                     }
 
                                     $sorgu =$mysqli->query($query);
@@ -77,32 +80,33 @@ if($_SESSION['isadmin'] == false){
                                                             $tarih=date("d/m/Y ",strtotime($satir["taskdate"]));
                                                             $saat=date("H:i",strtotime($satir["taskdate"]));
                                                             $id=$satir["id"];
-                                                            
+                 
 
-                                                            $userid3=intval($satir["user"]);
-                                                            $sorgu3 = $mysqli->query("SELECT * FROM users WHERE id='$userid3'");
-                                                            while($satir3=$sorgu3->fetch_assoc()){
-                                                                echo $satir3["adsoyad"]."-";
-                                                                echo $satir3["telefon"]."<br>";
-
-                                                            }
-                                                            echo "Tarih:".$tarih."&nbsp;";
-                                                            echo "Saat:".$saat."<br>";
-
-                                                            
-                                                            
-                                                            $islem = $satir["operations"];
-                                                            $dizi = explode (",",$islem);
-                                                            
-                                                            foreach($dizi as $anahtar => $deger){
-                                                                $deger=intval($deger);
-                                                                $sorgu2 = $mysqli->query("SELECT * FROM islemler WHERE id=$deger");
                                                                 
-                                                                while($s = $sorgu2->fetch_assoc()){
-                                                                    echo $s["isim"]."&nbsp;";
-                                                                   
-                                                                }   
-                                                            }
+                                                                echo $satir["adsoyad"]."-";
+                                                                echo $satir["telefon"]."<br>";
+
+                                                                
+                                                                echo "Tarih:".$tarih."&nbsp;";
+                                                                echo "Saat:".$saat."<br>";
+
+                                                                
+                                                                
+                                                                $islem = $satir["operations"];
+                                                                $dizi = explode (",",$islem);
+                                                                
+                                                                foreach($dizi as $anahtar => $deger){
+                                                                    $deger=intval($deger);
+                                                                    $sorgu2 = $mysqli->query("SELECT * FROM islemler WHERE id=$deger");
+                                                                    
+                                                                    while($s = $sorgu2->fetch_assoc()){
+                                                                        echo $s["isim"]."&nbsp;";
+                                                                    
+                                                                    }   
+                                                                }
+                                                            
+                                                                
+                                                            
                                                             
                                                             
                                                             ?>   
@@ -131,6 +135,14 @@ if($_SESSION['isadmin'] == false){
                                                 <?php
                                                 
                                             }
+                                        }
+                                        else{
+                                            ?>
+                                            <div class="notification is-danger">
+                                            KAYIT BULUNAMADI.
+
+                                            </div>
+                                            <?php
                                         }
                                     ?>
                                     </div>
